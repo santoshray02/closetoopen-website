@@ -68,23 +68,11 @@ export default function Navbar({ onOpenBooking, onOpenDeploymentGuide, onOpenLea
                 soundManager.playClick();
                 onOpenLeadMagnet();
               }}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded-lg bg-emerald-950/60 hover:bg-emerald-900/80 text-emerald-300 border border-emerald-800/60 transition-all"
+              className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-xl bg-emerald-950/60 hover:bg-emerald-900/80 text-emerald-300 border border-emerald-800/60 transition-all shadow-md"
               title="Download Free Executive Blueprint"
             >
               <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
               <span>Free Blueprint</span>
-            </button>
-
-            <button
-              onClick={() => {
-                soundManager.playClick();
-                onOpenDeploymentGuide();
-              }}
-              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/60 transition-all hover:text-white"
-              title="Netlify & GoDaddy Setup Guide"
-            >
-              <Globe className="w-3.5 h-3.5 text-blue-400" />
-              <span>Deploy Guide</span>
             </button>
 
             <button
@@ -149,12 +137,12 @@ export default function Navbar({ onOpenBooking, onOpenDeploymentGuide, onOpenLea
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                onOpenDeploymentGuide();
+                onOpenLeadMagnet();
               }}
-              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-800 text-slate-300 border border-slate-700 text-sm"
+              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-950/80 text-emerald-300 border border-emerald-800/80 text-sm font-semibold shadow-sm"
             >
-              <Globe className="w-4 h-4 text-blue-400" />
-              <span>Netlify & Domain Setup Guide</span>
+              <Sparkles className="w-4 h-4 text-emerald-400" />
+              <span>Get Free Blueprint</span>
             </button>
           </div>
         </div>

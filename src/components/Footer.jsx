@@ -38,14 +38,6 @@ export default function Footer({ onOpenBooking, onOpenDeploymentGuide }) {
               >
                 <LinkedInIcon className="w-4 h-4" />
               </a>
-
-              <button
-                onClick={onOpenDeploymentGuide}
-                className="w-9 h-9 rounded-lg bg-slate-900 hover:bg-slate-800 text-blue-400 border border-slate-800 flex items-center justify-center transition-colors"
-                title="Netlify & GoDaddy Domain Deployment Guide"
-              >
-                <Globe className="w-4 h-4" />
-              </button>
             </div>
           </div>
 
@@ -95,28 +87,21 @@ export default function Footer({ onOpenBooking, onOpenDeploymentGuide }) {
 
         </div>
 
-        {/* Bottom Copyright & Netlify badge */}
+        {/* Bottom Copyright */}
         <div className="pt-8 border-t border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
             © {new Date().getFullYear()} <strong className="text-slate-300">CloseToOpen.in</strong> by Ram Kishor Jha. All rights reserved.
           </div>
 
           <div className="flex items-center gap-4">
-            <button
-              onClick={onOpenDeploymentGuide}
-              className="text-blue-400 hover:underline flex items-center gap-1 font-mono text-[11px]"
-            >
-              <span>Deployed on Netlify</span>
-              <Globe className="w-3 h-3" />
-            </button>
-            <span>•</span>
             <a
               href={PROFILE.linkedInUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-400 hover:text-white"
+              className="text-slate-400 hover:text-white flex items-center gap-1.5"
             >
-              LinkedIn
+              <LinkedInIcon className="w-3.5 h-3.5 text-[#0A66C2]" />
+              <span>Connect on LinkedIn</span>
             </a>
           </div>
         </div>
