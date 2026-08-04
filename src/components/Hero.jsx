@@ -1,8 +1,9 @@
 import React from 'react';
-import { ArrowRight, Sparkles, ShieldCheck, Award, Users, TrendingUp, Compass } from 'lucide-react';
+import { ArrowRight, Sparkles, ShieldCheck, Award, Users, TrendingUp, Compass, Mic } from 'lucide-react';
 import { LinkedInIcon } from './BrandIcons';
 import { PROFILE } from '../data/portfolioData';
-import ramKishorJhaSvg from '../assets/ram_kishor_jha.svg';
+import ramKishorJhaPortrait from '../assets/ram_kishor_jha_portrait.jpg';
+import ramKishorJhaKeynote from '../assets/ram_kishor_jha_keynote.jpg';
 
 export default function Hero({ onOpenBooking, onStartQuiz }) {
   return (
@@ -104,11 +105,7 @@ export default function Hero({ onOpenBooking, onStartQuiz }) {
                   <div className="relative">
                     <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-blue-500 to-purple-600 p-0.5 shadow-lg overflow-hidden">
                       <img
-                        src="/src/assets/portrait.jpg"
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = ramKishorJhaSvg;
-                        }}
+                        src={ramKishorJhaPortrait}
                         alt="Ram Kishor Jha"
                         className="w-full h-full object-cover rounded-[14px]"
                       />
@@ -128,6 +125,25 @@ export default function Hero({ onOpenBooking, onStartQuiz }) {
                     <p className="text-xs text-slate-400 mt-1">
                       Founder of <span className="text-slate-200 font-medium">CloseToOpen.in</span>
                     </p>
+                  </div>
+                </div>
+
+                {/* Real Event Photo Showcase Banner (HPE Keynote Stage) */}
+                <div className="relative rounded-2xl overflow-hidden border border-slate-700/80 shadow-lg group">
+                  <img
+                    src={ramKishorJhaKeynote}
+                    alt="Ram Kishor Jha Keynote Speaker at HPE EPYC League"
+                    className="w-full h-36 object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent" />
+                  <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-xs">
+                    <div className="flex items-center gap-1.5 font-semibold text-white">
+                      <Mic className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>Keynote Speaker • HPE EPYC League</span>
+                    </div>
+                    <span className="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono border border-emerald-500/40">
+                      Live Stage
+                    </span>
                   </div>
                 </div>
 

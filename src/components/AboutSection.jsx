@@ -1,8 +1,10 @@
 import React from 'react';
-import { ShieldCheck, Target, Award, Compass, CheckCircle } from 'lucide-react';
+import { ShieldCheck, Target, Award, Compass, CheckCircle, Users, BookOpen } from 'lucide-react';
 import { LinkedInIcon } from './BrandIcons';
 import { PROFILE } from '../data/portfolioData';
-import ramKishorJhaSvg from '../assets/ram_kishor_jha.svg';
+import ramKishorJhaPortrait from '../assets/ram_kishor_jha_portrait.jpg';
+import ramKishorJhaWorkshopCollage from '../assets/ram_kishor_jha_workshop_collage.jpg';
+import ramKishorJhaWhiteboard from '../assets/ram_kishor_jha_whiteboard.jpg';
 import frameworkDiagramSvg from '../assets/closetoopen_framework_diagram.svg';
 
 export default function AboutSection() {
@@ -13,16 +15,13 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Visual Column */}
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative space-y-6">
+            
             <div className="glass-panel rounded-3xl p-8 border border-slate-800 space-y-6 relative overflow-hidden">
               
               <div className="w-28 h-28 rounded-3xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-pink-500 p-0.5 shadow-2xl mx-auto lg:mx-0 overflow-hidden">
                 <img
-                  src="/src/assets/portrait.jpg"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = ramKishorJhaSvg;
-                  }}
+                  src={ramKishorJhaPortrait}
                   alt="Ram Kishor Jha Profile"
                   className="w-full h-full object-cover rounded-[22px]"
                 />
@@ -53,6 +52,20 @@ export default function AboutSection() {
                     <span>{item}</span>
                   </div>
                 ))}
+              </div>
+
+              {/* Real Workshop Collage Image */}
+              <div className="rounded-2xl overflow-hidden border border-slate-700/80 relative group">
+                <img
+                  src={ramKishorJhaWorkshopCollage}
+                  alt="Ram Kishor Jha Enterprise Masterclasses and Storage Concepts Sessions"
+                  className="w-full h-44 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
+                <div className="absolute bottom-2 left-3 text-[11px] font-semibold text-slate-200 flex items-center gap-1.5">
+                  <Users className="w-3.5 h-3.5 text-blue-400" />
+                  <span>Enterprise Corporate Masterclasses & Training</span>
+                </div>
               </div>
 
               {/* LinkedIn Button */}
