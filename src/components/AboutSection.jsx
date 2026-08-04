@@ -18,7 +18,11 @@ export default function AboutSection() {
               
               <div className="w-28 h-28 rounded-3xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-pink-500 p-0.5 shadow-2xl mx-auto lg:mx-0 overflow-hidden">
                 <img
-                  src={ramKishorJhaSvg}
+                  src="/src/assets/portrait.jpg"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = ramKishorJhaSvg;
+                  }}
                   alt="Ram Kishor Jha Profile"
                   className="w-full h-full object-cover rounded-[22px]"
                 />

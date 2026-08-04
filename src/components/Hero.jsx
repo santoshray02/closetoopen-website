@@ -104,7 +104,11 @@ export default function Hero({ onOpenBooking, onStartQuiz }) {
                   <div className="relative">
                     <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-blue-500 to-purple-600 p-0.5 shadow-lg overflow-hidden">
                       <img
-                        src={ramKishorJhaSvg}
+                        src="/src/assets/portrait.jpg"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = ramKishorJhaSvg;
+                        }}
                         alt="Ram Kishor Jha"
                         className="w-full h-full object-cover rounded-[14px]"
                       />
