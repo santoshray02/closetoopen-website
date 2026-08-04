@@ -39,11 +39,8 @@ export default function Navbar({ onOpenBooking, onOpenDeploymentGuide, onOpenLea
               </div>
             </div>
             <div className="flex flex-col">
-              <div className="flex items-center gap-1.5 font-bold tracking-tight text-white text-lg font-heading">
+              <div className="flex items-center gap-1 font-bold tracking-tight text-white text-xl font-heading">
                 <span>CloseToOpen</span>
-                <span className="text-xs px-1.5 py-0.5 rounded bg-blue-500/20 text-blue-400 border border-blue-500/30 font-mono font-normal">
-                  .in
-                </span>
               </div>
               <span className="text-[11px] text-slate-400 tracking-wider uppercase font-medium">
                 Ram Kishor Jha
