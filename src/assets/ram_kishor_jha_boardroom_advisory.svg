@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" fill="none">
+  <defs>
+    <linearGradient id="boardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <linearGradient id="goldGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="300" rx="24" fill="url(#boardGrad)" stroke="#334155" stroke-width="2" />
+  
+  <!-- Boardroom Table Graphic -->
+  <ellipse cx="300" cy="220" rx="220" ry="50" fill="#1E293B" stroke="url(#goldGlow)" stroke-width="2" />
+
+  <!-- Executive Chairs -->
+  <circle cx="150" cy="180" r="14" fill="#3B82F6" />
+  <circle cx="210" cy="165" r="14" fill="#8B5CF6" />
+  <circle cx="390" cy="165" r="14" fill="#8B5CF6" />
+  <circle cx="450" cy="180" r="14" fill="#3B82F6" />
+
+  <!-- Lead Speaker Seat (Ram Kishor Jha) -->
+  <circle cx="300" cy="150" r="18" fill="url(#goldGlow)" />
+  <text x="300" y="155" font-family="'Outfit', sans-serif" font-size="12" font-weight="900" fill="#0F172A" text-anchor="middle">RKJ</text>
+
+  <!-- Overlay Title Card -->
+  <rect x="180" y="40" width="240" height="32" rx="8" fill="#0F172A" stroke="#F59E0B" stroke-width="1.5" />
+  <text x="300" y="61" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" fill="#FDE047" text-anchor="middle">1-ON-1 EXECUTIVE BOARDROOM</text>
+
+  <text x="300" y="105" font-family="'Outfit', sans-serif" font-size="18" font-weight="900" fill="#FFFFFF" text-anchor="middle">Strategic Advisory & Governance</text>
+</svg>

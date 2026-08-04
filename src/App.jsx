@@ -5,6 +5,7 @@ import ReadinessAssessment from './components/ReadinessAssessment';
 import AdvisoryPillars from './components/AdvisoryPillars';
 import RoiCalculator from './components/RoiCalculator';
 import CaseStudies from './components/CaseStudies';
+import MediaShowcase from './components/MediaShowcase';
 import AboutSection from './components/AboutSection';
 import TimelineSection from './components/TimelineSection';
 import KnowledgeHub from './components/KnowledgeHub';
@@ -61,6 +62,10 @@ export default function App() {
         />
 
         <CaseStudies
+          onOpenBooking={() => setIsBookingOpen(true)}
+        />
+
+        <MediaShowcase
           onOpenBooking={() => setIsBookingOpen(true)}
         />
 
