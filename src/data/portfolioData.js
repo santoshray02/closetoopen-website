@@ -174,6 +174,70 @@ When a client or partner says "It's too expensive" or "We need more time," inexp
 
 *Closing a deal is just opening the door to mutual growth.*
     `
+  },
+  {
+    id: "enterprise-storage-architecture",
+    category: "Tech & Enterprise",
+    title: "Modern Enterprise Storage & Hybrid Cloud Architecture: Lessons from HPE EPYC Stage",
+    readTime: "7 min read",
+    date: "Aug 2026",
+    excerpt: "How enterprise leaders evaluate storage density, high availability, and AI workload infrastructure in 2026.",
+    content: `
+### Storage Architecture in the Age of Enterprise AI
+
+As data volume explodes across hybrid environments, legacy storage arrays create severe operational latency. Drawing from keynote sessions at HPE EPYC League 2025, enterprise IT leaders must shift focus toward high-density throughput and automated tiering.
+
+#### Core Architectural Pillars:
+
+1. **NVMe-Over-Fabrics (NVMe-oF)**: Minimizing latency for compute-intensive AI pipelines.
+2. **Unified Data Governance**: Ensuring immutable snapshots against ransomware risks.
+3. **Hybrid Cloud Flexibility**: Balancing local low-latency requirements with cloud elasticity.
+
+*Advised corporate enterprise teams on storage migration and infrastructure scaling.*
+    `
+  },
+  {
+    id: "executive-salary-negotiation",
+    category: "Career Strategy",
+    title: "The Executive Compensation Blueprint: How to Negotiate a 40%+ Raise Without Burning Bridges",
+    readTime: "6 min read",
+    date: "Jul 2026",
+    excerpt: "Stop asking for raises based on tenure. Learn how top tech leaders anchor salary talks around quantifiable ROI and market benchmarks.",
+    content: `
+### Shifting Compensation Discussions from Merit to Value Creation
+
+Most salary negotiation attempts fail because candidates justify their request using personal expenses or tenure. Executives negotiate based on market leverage, revenue impact, and replacement difficulty.
+
+#### The 4-Step Compensation Framework:
+
+- **Quantify Your Business Value**: Build a 1-page impact dossier showing cost savings, revenue generated, and team velocity gains.
+- **Establish External Benchmark Proof**: Benchmark your role across top-tier enterprise tiers using verified market data.
+- **Propose Performance-Tied Bonuses**: Offer equity vesting or milestone bonuses if baseline salary budgets are capped.
+- **Maintain High EQ & Collaboration**: Frame the talk as a mutual investment in long-term alignment.
+
+*Mentees working with Ram Kishor Jha have achieved average compensation increases of 40%–45%.*
+    `
+  },
+  {
+    id: "high-trust-team-alignment",
+    category: "Negotiation & Mindset",
+    title: "Building High-Trust Cross-Functional Teams: Lessons from 15+ Years in Operations",
+    readTime: "5 min read",
+    date: "Jun 2026",
+    excerpt: "Siloed departments kill speed. Discover how the 'CloseToOpen' alignment framework eliminates project friction and boosts delivery velocity.",
+    content: `
+### Overcoming Organizational Silos in Complex Projects
+
+Friction between Product, Engineering, Sales, and Operations is the single biggest cause of delayed enterprise rollouts. When departments protect local metrics over corporate goals, delivery stalls.
+
+#### The CloseToOpen Alignment Principles:
+
+1. **Single Source of Truth Metrics**: Agree on unified KPIs across all departments.
+2. **Weekly Asynchronous Standups**: Eliminate bloat meetings by automating progress tracking.
+3. **Psychological Safety under Pressure**: Encourage fast failure escalation over delayed status reporting.
+
+*Book a corporate workshop to realign your leadership team.*
+    `
   }
 ];
 

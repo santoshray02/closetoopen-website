@@ -6,7 +6,7 @@ export default function KnowledgeHub({ onOpenBooking }) {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [activeArticle, setActiveArticle] = useState(null);
 
-  const categories = ['All', 'Career Strategy', 'Business Growth', 'Negotiation & Mindset'];
+  const categories = ['All', 'Career Strategy', 'Business Growth', 'Tech & Enterprise', 'Negotiation & Mindset'];
 
   const filteredArticles = selectedCategory === 'All'
     ? ARTICLES
