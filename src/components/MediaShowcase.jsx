@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { Mic, Play, Radio, Users, Award, ExternalLink, Sparkles } from 'lucide-react';
+import { Mic, Play, Radio, Users, Award, ExternalLink, Sparkles, Globe, Compass } from 'lucide-react';
 import ramKishorJhaKeynote from '../assets/ram_kishor_jha_keynote.jpg';
+import ramKishorJhaEpycLeague from '../assets/ram_kishor_jha_epyc_league.jpg';
+import ramKishorJhaTableMountain from '../assets/ram_kishor_jha_table_mountain.jpg';
+import ramKishorJhaSunCity from '../assets/ram_kishor_jha_sun_city.jpg';
 import ramKishorJhaWorkshopCollage from '../assets/ram_kishor_jha_workshop_collage.jpg';
 import ramKishorJhaWhiteboard from '../assets/ram_kishor_jha_whiteboard.jpg';
 import podcastStudioSvg from '../assets/ram_kishor_jha_podcast_studio.svg';
-import boardroomAdvisorySvg from '../assets/ram_kishor_jha_boardroom_advisory.svg';
 
 export default function MediaShowcase({ onOpenBooking }) {
   const [activeTab, setActiveTab] = useState('all');
@@ -21,6 +23,24 @@ export default function MediaShowcase({ onOpenBooking }) {
     },
     {
       id: 2,
+      type: 'keynote',
+      title: 'HPE | AMD | Microsoft EPYC League 2025 Summit',
+      category: 'Executive Summit',
+      image: ramKishorJhaEpycLeague,
+      badge: 'Official Sponsor Stage',
+      desc: 'Ram Kishor Jha representing CloseToOpen enterprise strategy at the HPE AMD Microsoft Summit.'
+    },
+    {
+      id: 3,
+      type: 'advisory',
+      title: 'Global Leadership & Strategic Executive Summit',
+      category: 'Global Presence',
+      image: ramKishorJhaTableMountain,
+      badge: 'Cape Town Summit',
+      desc: 'High-impact global leadership retreats and international strategic advisory sessions.'
+    },
+    {
+      id: 4,
       type: 'workshop',
       title: 'Enterprise Storage & Strategy Masterclass Series',
       category: 'Corporate Workshop',
@@ -29,7 +49,7 @@ export default function MediaShowcase({ onOpenBooking }) {
       desc: 'Interactive executive alignment sessions conducted across enterprise business units.'
     },
     {
-      id: 3,
+      id: 5,
       type: 'advisory',
       title: 'Whiteboard Architecture & Strategy Alignment',
       category: '1-on-1 Mentorship',
@@ -38,7 +58,7 @@ export default function MediaShowcase({ onOpenBooking }) {
       desc: 'Deep-dive whiteboard breakdown of career positioning and startup unit economics.'
     },
     {
-      id: 4,
+      id: 6,
       type: 'podcast',
       title: 'The CloseToOpen Leadership Podcast',
       category: 'Podcast & Media',
