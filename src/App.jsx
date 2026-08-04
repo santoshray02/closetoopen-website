@@ -3,12 +3,15 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ReadinessAssessment from './components/ReadinessAssessment';
 import AdvisoryPillars from './components/AdvisoryPillars';
+import RoiCalculator from './components/RoiCalculator';
 import AboutSection from './components/AboutSection';
 import TimelineSection from './components/TimelineSection';
 import KnowledgeHub from './components/KnowledgeHub';
 import Testimonials from './components/Testimonials';
 import BookingModal from './components/BookingModal';
 import DeploymentGuideModal from './components/DeploymentGuideModal';
+import AiMentorWidget from './components/AiMentorWidget';
+import AmbientBackground from './components/AmbientBackground';
 import Footer from './components/Footer';
 
 export default function App() {
@@ -23,8 +26,11 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#090D16] text-slate-100 selection:bg-blue-600 selection:text-white font-sans">
+    <div className="relative min-h-screen bg-[#090D16] text-slate-100 selection:bg-blue-600 selection:text-white font-sans overflow-x-hidden">
       
+      {/* Ambient Particle Background Canvas */}
+      <AmbientBackground />
+
       {/* Top Navbar */}
       <Navbar
         onOpenBooking={() => setIsBookingOpen(true)}
@@ -32,7 +38,7 @@ export default function App() {
       />
 
       {/* Main Content Sections */}
-      <main>
+      <main className="relative z-10">
         <Hero
           onOpenBooking={() => setIsBookingOpen(true)}
           onStartQuiz={handleStartQuiz}
@@ -43,6 +49,10 @@ export default function App() {
         />
 
         <AdvisoryPillars
+          onOpenBooking={() => setIsBookingOpen(true)}
+        />
+
+        <RoiCalculator
           onOpenBooking={() => setIsBookingOpen(true)}
         />
 
@@ -61,6 +71,11 @@ export default function App() {
       <Footer
         onOpenBooking={() => setIsBookingOpen(true)}
         onOpenDeploymentGuide={() => setIsDeploymentGuideOpen(true)}
+      />
+
+      {/* Floating AI Mentor Widget */}
+      <AiMentorWidget
+        onOpenBooking={() => setIsBookingOpen(true)}
       />
 
       {/* Booking & Consultation Modal */}
