@@ -1,13 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
   <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="favGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#3B82F6" />
       <stop offset="50%" stop-color="#8B5CF6" />
       <stop offset="100%" stop-color="#EC4899" />
     </linearGradient>
+    <linearGradient id="favOpenGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#10B981" />
+    </linearGradient>
   </defs>
-  <rect width="100" height="100" rx="24" fill="#0F172A" />
-  <rect x="2" y="2" width="96" height="96" rx="22" stroke="url(#grad)" stroke-width="4" fill="none" />
-  <path d="M30 65 L48 35 L66 65" stroke="url(#grad)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
-  <circle cx="68" cy="35" r="7" fill="#38BDF8" />
+  <rect width="100" height="100" rx="28" fill="#090D16" />
+  <rect x="2" y="2" width="96" height="96" rx="26" stroke="url(#favGrad)" stroke-width="4" fill="none" />
+  
+  <!-- Outer Closing Arc 'C' -->
+  <path d="M 58 24 C 38 24, 24 38, 24 50 C 24 62, 38 76, 58 76" stroke="url(#favGrad)" stroke-width="9" stroke-linecap="round" fill="none" />
+  
+  <!-- Inner Opening Door / Portal Arrow 'O' -->
+  <path d="M 44 50 C 44 38, 52 30, 64 30 C 76 30, 84 38, 84 50 C 84 62, 76 70, 64 70" stroke="url(#favOpenGrad)" stroke-width="7" stroke-linecap="round" stroke-dasharray="45 15" fill="none" />
+  
+  <!-- Growth Pulse Arrow -->
+  <circle cx="64" cy="50" r="6" fill="#38BDF8" />
+  <path d="M 64 50 L 78 36 M 78 36 L 68 36 M 78 36 L 78 46" stroke="#38BDF8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
 </svg>

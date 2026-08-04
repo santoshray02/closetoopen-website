@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Sparkles, Calendar, Menu, X, ArrowUpRight, Globe, ShieldCheck } from 'lucide-react';
 import { soundManager } from '../utils/soundEffects';
 import { PROFILE } from '../data/portfolioData';
+import BrandLogo from './BrandLogo';
 
 export default function Navbar({ onOpenBooking, onOpenDeploymentGuide, onOpenLeadMagnet }) {
   const [scrolled, setScrolled] = useState(false);
@@ -32,20 +33,8 @@ export default function Navbar({ onOpenBooking, onOpenDeploymentGuide, onOpenLea
         <div className="flex items-center justify-between">
           
           {/* Brand Logo */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-pink-500 p-[2px] shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
-              <div className="w-full h-full bg-[#0F172A] rounded-[10px] flex items-center justify-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-400 text-lg">
-                C2O
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1 font-bold tracking-tight text-white text-xl font-heading">
-                <span>CloseToOpen</span>
-              </div>
-              <span className="text-[11px] text-slate-400 tracking-wider uppercase font-medium">
-                Ram Kishor Jha
-              </span>
-            </div>
+          <a href="#">
+            <BrandLogo />
           </a>
 
           {/* Desktop Nav Links */}

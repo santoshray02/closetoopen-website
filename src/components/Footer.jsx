@@ -2,6 +2,7 @@ import React from 'react';
 import { Mail, Phone, MapPin, Globe, Sparkles, Heart } from 'lucide-react';
 import { LinkedInIcon } from './BrandIcons';
 import { PROFILE } from '../data/portfolioData';
+import BrandLogo from './BrandLogo';
 
 export default function Footer({ onOpenBooking, onOpenDeploymentGuide }) {
   return (
@@ -12,17 +13,7 @@ export default function Footer({ onOpenBooking, onOpenDeploymentGuide }) {
           
           {/* Brand Col */}
           <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-pink-500 p-[2px]">
-                <div className="w-full h-full bg-[#0F172A] rounded-[10px] flex items-center justify-center font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-400 text-lg">
-                  C2O
-                </div>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-white text-lg font-heading">CloseToOpen.in</span>
-                <span className="text-xs text-slate-400">Strategic Career & Business Ecosystem</span>
-              </div>
-            </div>
+            <BrandLogo />
 
             <p className="text-xs text-slate-400 leading-relaxed max-w-md">
               CloseToOpen by <strong className="text-slate-200">Ram Kishor Jha</strong> empowers ambitious professionals, managers, and startup founders to close career & business plateaus and open high-impact growth paths.
