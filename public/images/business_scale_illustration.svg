@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 320" fill="none">
+  <defs>
+    <linearGradient id="bGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="50%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E293B" />
+    </linearGradient>
+    <filter id="glow2" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <rect width="500" height="320" rx="24" fill="url(#bgGrad2)" stroke="#334155" stroke-width="2" />
+
+  <!-- Revenue Bar Charts -->
+  <rect x="70" y="180" width="45" height="90" rx="8" fill="#334155" />
+  <text x="92" y="165" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="#94A3B8" text-anchor="middle">Phase 1</text>
+
+  <rect x="150" y="140" width="45" height="130" rx="8" fill="#1E40AF" />
+  <text x="172" y="125" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="#60A5FA" text-anchor="middle">Phase 2</text>
+
+  <rect x="230" y="90" width="45" height="180" rx="8" fill="#4338CA" />
+  <text x="252" y="75" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="#818CF8" text-anchor="middle">Phase 3</text>
+
+  <rect x="310" y="40" width="55" height="230" rx="8" fill="url(#bGrad)" filter="url(#glow2)" />
+  <text x="337" y="25" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" fill="#34D399" text-anchor="middle">3.2x Scale ($650K Raised)</text>
+
+  <!-- Rocket/GTM Icon overlay -->
+  <circle cx="430" cy="140" r="40" fill="#0F172A" stroke="#10B981" stroke-width="2" />
+  <path d="M 430 115 L 440 135 L 433 135 L 433 155 L 427 155 L 427 135 L 420 135 Z" fill="#10B981" />
+  <text x="430" y="195" font-family="'Outfit', sans-serif" font-size="11" font-weight="700" fill="#A7F3D0" text-anchor="middle">GTM Acceleration</text>
+</svg>

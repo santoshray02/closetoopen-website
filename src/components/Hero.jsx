@@ -2,6 +2,7 @@ import React from 'react';
 import { ArrowRight, Sparkles, ShieldCheck, Award, Users, TrendingUp, Compass } from 'lucide-react';
 import { LinkedInIcon } from './BrandIcons';
 import { PROFILE } from '../data/portfolioData';
+import ramKishorJhaSvg from '../assets/ram_kishor_jha.svg';
 
 export default function Hero({ onOpenBooking, onStartQuiz }) {
   return (
@@ -103,7 +104,7 @@ export default function Hero({ onOpenBooking, onStartQuiz }) {
                   <div className="relative">
                     <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-blue-500 to-purple-600 p-0.5 shadow-lg overflow-hidden">
                       <img
-                        src="/src/assets/ram_kishor_jha.svg"
+                        src={ramKishorJhaSvg}
                         alt="Ram Kishor Jha"
                         className="w-full h-full object-cover rounded-[14px]"
                       />

@@ -2,6 +2,8 @@ import React from 'react';
 import { ShieldCheck, Target, Award, Compass, CheckCircle } from 'lucide-react';
 import { LinkedInIcon } from './BrandIcons';
 import { PROFILE } from '../data/portfolioData';
+import ramKishorJhaSvg from '../assets/ram_kishor_jha.svg';
+import frameworkDiagramSvg from '../assets/closetoopen_framework_diagram.svg';
 
 export default function AboutSection() {
   return (
@@ -16,7 +18,7 @@ export default function AboutSection() {
               
               <div className="w-28 h-28 rounded-3xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-pink-500 p-0.5 shadow-2xl mx-auto lg:mx-0 overflow-hidden">
                 <img
-                  src="/src/assets/ram_kishor_jha.svg"
+                  src={ramKishorJhaSvg}
                   alt="Ram Kishor Jha Profile"
                   className="w-full h-full object-cover rounded-[22px]"
                 />
@@ -91,7 +93,7 @@ export default function AboutSection() {
               {/* Framework Diagram for Layman */}
               <div className="rounded-xl overflow-hidden border border-slate-800 bg-slate-950 p-2">
                 <img
-                  src="/src/assets/closetoopen_framework_diagram.svg"
+                  src={frameworkDiagramSvg}
                   alt="CloseToOpen Framework Diagram"
                   className="w-full h-auto rounded-lg"
                 />

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { TrendingUp, Rocket, Users, ShieldCheck, Check, ArrowRight, X, Sparkles } from 'lucide-react';
 import { ADVISORY_SERVICES } from '../data/portfolioData';
+import careerGrowthSvg from '../assets/career_growth_illustration.svg';
+import businessScaleSvg from '../assets/business_scale_illustration.svg';
+import frameworkDiagramSvg from '../assets/closetoopen_framework_diagram.svg';
 
 const iconMap = {
   TrendingUp: TrendingUp,
@@ -77,10 +80,10 @@ export default function AdvisoryPillars({ onOpenBooking }) {
                     <img
                       src={
                         service.id === 'career-mentorship'
-                          ? '/src/assets/career_growth_illustration.svg'
+                          ? careerGrowthSvg
                           : service.id === 'business-advisory'
-                          ? '/src/assets/business_scale_illustration.svg'
-                          : '/src/assets/closetoopen_framework_diagram.svg'
+                          ? businessScaleSvg
+                          : frameworkDiagramSvg
                       }
                       alt={`${service.title} Visual Blueprint`}
                       className="w-full h-auto rounded-xl opacity-90 group-hover:opacity-100 transition-opacity"
