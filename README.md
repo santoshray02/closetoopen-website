@@ -62,6 +62,28 @@ git push -u origin main
 
 ---
 
+## 🤖 Antigravity CLI (`agy`) Developer Instructions
+
+This repository is fully configured for **Google Antigravity CLI (`agy`)**.
+
+### Quick CLI Commands:
+```bash
+# Launch Antigravity CLI inside this project
+agy
+
+# Direct AI feature expansion commands
+agy "Add a new playbook article on executive salary negotiation to data/portfolioData.js"
+agy "Run build test and push updates via SSH"
+```
+
+### Project Workspace Rules:
+Antigravity CLI rules for this portfolio are specified in [`.gemini/rules.md`](.gemini/rules.md):
+- **Git Remote**: `git@github.com:santoshray02/closetoopen-website.git`
+- **Build Verification**: `npm run build`
+- **Design System**: Dark Obsidian (`#090D16`), Glassmorphism, Tailwind CSS v4, Motion
+
+---
+
 ## 🏃 Local Development
 ```bash
 npm install
