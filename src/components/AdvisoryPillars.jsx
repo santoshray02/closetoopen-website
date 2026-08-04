@@ -72,6 +72,21 @@ export default function AdvisoryPillars({ onOpenBooking }) {
                     {service.description}
                   </p>
 
+                  {/* Visual Illustration Diagram for Layman Understanding */}
+                  <div className="rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 p-2 my-2">
+                    <img
+                      src={
+                        service.id === 'career-mentorship'
+                          ? '/src/assets/career_growth_illustration.svg'
+                          : service.id === 'business-advisory'
+                          ? '/src/assets/business_scale_illustration.svg'
+                          : '/src/assets/closetoopen_framework_diagram.svg'
+                      }
+                      alt={`${service.title} Visual Blueprint`}
+                      className="w-full h-auto rounded-xl opacity-90 group-hover:opacity-100 transition-opacity"
+                    />
+                  </div>
+
                   {/* Feature Checkmarks */}
                   <div className="space-y-2.5 pt-2">
                     {service.features.map((feat, idx) => (

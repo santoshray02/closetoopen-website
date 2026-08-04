@@ -79,14 +79,23 @@ export default function AboutSection() {
               Throughout 15+ years in high-stakes corporate management, operations, and business consulting, <strong className="text-white">Ram Kishor Jha</strong> recognized a recurring pattern: ambitious professionals and founders often get stuck not because of a lack of effort, but because they are holding onto outdated operating models.
             </p>
 
-            <div className="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-3">
+            <div className="p-6 rounded-2xl bg-slate-900/90 border border-slate-800 space-y-4">
               <h4 className="text-base font-bold text-white font-heading flex items-center gap-2">
                 <Target className="w-5 h-5 text-blue-400" />
-                <span>The CloseToOpen Methodology</span>
+                <span>The CloseToOpen Visual Framework</span>
               </h4>
               <p className="text-sm text-slate-300 leading-relaxed">
                 <strong className="text-blue-300">CLOSE</strong> the doors on legacy habits, plateaued career tactics, and inefficient business workflows. <strong className="text-purple-300">OPEN</strong> new channels of high-margin strategy, executive positioning, and compounding revenue.
               </p>
+
+              {/* Framework Diagram for Layman */}
+              <div className="rounded-xl overflow-hidden border border-slate-800 bg-slate-950 p-2">
+                <img
+                  src="/src/assets/closetoopen_framework_diagram.svg"
+                  alt="CloseToOpen Framework Diagram"
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
             </div>
 
             {/* Core Values / Strengths Grid */}
