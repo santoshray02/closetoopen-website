@@ -14,10 +14,12 @@ export default function AboutSection() {
           <div className="lg:col-span-5 relative">
             <div className="glass-panel rounded-3xl p-8 border border-slate-800 space-y-6 relative overflow-hidden">
               
-              <div className="w-24 h-24 rounded-3xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-pink-500 p-1 shadow-2xl mx-auto lg:mx-0">
-                <div className="w-full h-full rounded-[22px] bg-slate-950 flex items-center justify-center text-4xl font-black text-white font-heading">
-                  RKJ
-                </div>
+              <div className="w-28 h-28 rounded-3xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-pink-500 p-0.5 shadow-2xl mx-auto lg:mx-0 overflow-hidden">
+                <img
+                  src="/src/assets/ram_kishor_jha.svg"
+                  alt="Ram Kishor Jha Profile"
+                  className="w-full h-full object-cover rounded-[22px]"
+                />
               </div>
 
               <div className="space-y-2 text-center lg:text-left">

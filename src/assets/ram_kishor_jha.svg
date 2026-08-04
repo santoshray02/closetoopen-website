@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#1E1B4B" />
+      <stop offset="100%" stop-color="#090D16" />
+    </linearGradient>
+    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="50%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+    <linearGradient id="suitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="400" height="400" rx="32" fill="url(#bgGrad)" />
+  <circle cx="200" cy="150" r="120" fill="#3B82F6" opacity="0.15" filter="url(#glow)" />
+  <circle cx="280" cy="220" r="90" fill="#8B5CF6" opacity="0.15" filter="url(#glow)" />
+
+  <!-- Outer Ring -->
+  <rect x="10" y="10" width="380" height="380" rx="26" stroke="url(#ringGrad)" stroke-width="3" fill="none" opacity="0.6" />
+
+  <!-- Silhouette / Stylized Avatar Body -->
+  <!-- Shoulders / Suit -->
+  <path d="M 90 380 Q 200 270 310 380 Z" fill="url(#suitGrad)" stroke="#334155" stroke-width="2" />
+  <!-- Shirt V & Tie -->
+  <path d="M 175 320 L 200 380 L 225 320 L 200 295 Z" fill="#38BDF8" opacity="0.9" />
+  <path d="M 193 305 L 207 305 L 204 380 L 196 380 Z" fill="#6366F1" />
+
+  <!-- Neck -->
+  <rect x="175" y="240" width="50" height="60" rx="10" fill="#E2E8F0" opacity="0.85" />
+
+  <!-- Head Outline -->
+  <ellipse cx="200" cy="195" rx="55" ry="68" fill="#F1F5F9" />
+
+  <!-- Hair / Grooming -->
+  <path d="M 142 185 C 140 140, 160 120, 200 120 C 240 120, 260 140, 258 185 C 248 135, 152 135, 142 185 Z" fill="#0F172A" />
+
+  <!-- Glasses (Executive Spec look) -->
+  <rect x="160" y="180" width="32" height="22" rx="5" stroke="#1E293B" stroke-width="3" fill="#38BDF8" fill-opacity="0.15" />
+  <rect x="208" y="180" width="32" height="22" rx="5" stroke="#1E293B" stroke-width="3" fill="#38BDF8" fill-opacity="0.15" />
+  <line x1="192" y1="190" x2="208" y2="190" stroke="#1E293B" stroke-width="3" />
+
+  <!-- Confident Smile -->
+  <path d="M 180 225 Q 200 240 220 225" stroke="#334155" stroke-width="3.5" stroke-linecap="round" fill="none" />
+
+  <!-- Monogram Badge overlay -->
+  <rect x="270" y="270" width="100" height="40" rx="12" fill="#0F172A" stroke="url(#ringGrad)" stroke-width="2" />
+  <text x="320" y="295" font-family="'Outfit', sans-serif" font-size="14" font-weight="800" fill="#60A5FA" text-anchor="middle">RKJ ADVISORY</text>
+</svg>

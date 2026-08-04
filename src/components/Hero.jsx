@@ -101,10 +101,12 @@ export default function Hero({ onOpenBooking, onStartQuiz }) {
                 {/* Header profile avatar & badge */}
                 <div className="flex items-center gap-4">
                   <div className="relative">
-                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-blue-500 to-purple-600 p-1 shadow-lg">
-                      <div className="w-full h-full rounded-[14px] bg-slate-950 flex items-center justify-center text-3xl font-black text-white font-heading">
-                        RKJ
-                      </div>
+                    <div className="w-20 h-20 rounded-2xl bg-gradient-to-tr from-blue-500 to-purple-600 p-0.5 shadow-lg overflow-hidden">
+                      <img
+                        src="/src/assets/ram_kishor_jha.svg"
+                        alt="Ram Kishor Jha"
+                        className="w-full h-full object-cover rounded-[14px]"
+                      />
                     </div>
                     <div className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-emerald-500 border-2 border-slate-900 flex items-center justify-center">
                       <ShieldCheck className="w-3.5 h-3.5 text-slate-950" />
