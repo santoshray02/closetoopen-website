@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Sparkles, Calendar, Menu, X, ArrowUpRight, Globe, ShieldCheck } from 'lucide-react';
+import { soundManager } from '../utils/soundEffects';
 import { PROFILE } from '../data/portfolioData';
 
-export default function Navbar({ onOpenBooking, onOpenDeploymentGuide }) {
+export default function Navbar({ onOpenBooking, onOpenDeploymentGuide, onOpenLeadMagnet }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -66,7 +67,22 @@ export default function Navbar({ onOpenBooking, onOpenDeploymentGuide }) {
           {/* Right Action Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <button
-              onClick={onOpenDeploymentGuide}
+              onClick={() => {
+                soundManager.playClick();
+                onOpenLeadMagnet();
+              }}
+              className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded-lg bg-emerald-950/60 hover:bg-emerald-900/80 text-emerald-300 border border-emerald-800/60 transition-all"
+              title="Download Free Executive Blueprint"
+            >
+              <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
+              <span>Free Blueprint</span>
+            </button>
+
+            <button
+              onClick={() => {
+                soundManager.playClick();
+                onOpenDeploymentGuide();
+              }}
               className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/60 transition-all hover:text-white"
               title="Netlify & GoDaddy Setup Guide"
             >
@@ -75,7 +91,10 @@ export default function Navbar({ onOpenBooking, onOpenDeploymentGuide }) {
             </button>
 
             <button
-              onClick={onOpenBooking}
+              onClick={() => {
+                soundManager.playClick();
+                onOpenBooking();
+              }}
               className="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 hover:-translate-y-0.5 transition-all duration-200"
             >
               <Calendar className="w-4 h-4" />
