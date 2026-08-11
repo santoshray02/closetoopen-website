@@ -20,6 +20,7 @@ export default function Navbar({ onOpenBooking, onOpenDeploymentGuide, onOpenLea
     { label: 'About', href: '#about' },
     { label: 'Advisory', href: '#advisory' },
     { label: 'Growth Scorecard', href: '#scorecard' },
+    { label: 'Book Community', href: '#community' },
     { label: 'Milestones', href: '#milestones' },
     { label: 'Insights', href: '#insights' },
     { label: 'Testimonials', href: '#testimonials' },

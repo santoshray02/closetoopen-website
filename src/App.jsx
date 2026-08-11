@@ -9,6 +9,7 @@ import MediaShowcase from './components/MediaShowcase';
 import AboutSection from './components/AboutSection';
 import TimelineSection from './components/TimelineSection';
 import KnowledgeHub from './components/KnowledgeHub';
+import CommunityPortal from './components/CommunityPortal';
 import Testimonials from './components/Testimonials';
 import BookingModal from './components/BookingModal';
 import DeploymentGuideModal from './components/DeploymentGuideModal';
@@ -74,6 +75,10 @@ export default function App() {
         <TimelineSection />
 
         <KnowledgeHub
+          onOpenBooking={() => setIsBookingOpen(true)}
+        />
+
+        <CommunityPortal
           onOpenBooking={() => setIsBookingOpen(true)}
         />
 
