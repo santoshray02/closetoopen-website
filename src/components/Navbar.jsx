@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Calendar, Menu, X, ArrowUpRight, Globe, ShieldCheck } from 'lucide-react';
+import { Sparkles, Calendar, Menu, X, User, LogOut, ShieldCheck } from 'lucide-react';
 import { soundManager } from '../utils/soundEffects';
 import { PROFILE } from '../data/portfolioData';
 import BrandLogo from './BrandLogo';
 
-export default function Navbar({ onOpenBooking, onOpenDeploymentGuide, onOpenLeadMagnet }) {
+export default function Navbar({ onOpenBooking, onOpenDeploymentGuide, onOpenLeadMagnet, currentUser, onOpenAuth, onSignOut }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -53,6 +53,36 @@ export default function Navbar({ onOpenBooking, onOpenDeploymentGuide, onOpenLea
 
           {/* Right Action Buttons */}
           <div className="hidden lg:flex items-center gap-3">
+            
+            {/* User Auth Profile Badge or Sign In button */}
+            {currentUser ? (
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700 text-xs text-white">
+                <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                <span className="font-bold">{currentUser.user_metadata?.full_name || currentUser.email.split('@')[0]}</span>
+                <button
+                  onClick={() => {
+                    soundManager.playClick();
+                    onSignOut();
+                  }}
+                  className="p-1 text-slate-400 hover:text-rose-400 rounded transition-colors"
+                  title="Sign Out"
+                >
+                  <LogOut className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            ) : (
+              <button
+                onClick={() => {
+                  soundManager.playClick();
+                  onOpenAuth();
+                }}
+                className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-700 transition-all"
+              >
+                <User className="w-3.5 h-3.5 text-blue-400" />
+                <span>Sign In / Register</span>
+              </button>
+            )}
+
             <button
               onClick={() => {
                 soundManager.playClick();

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ReadinessAssessment from './components/ReadinessAssessment';
@@ -14,14 +14,37 @@ import Testimonials from './components/Testimonials';
 import BookingModal from './components/BookingModal';
 import DeploymentGuideModal from './components/DeploymentGuideModal';
 import LeadMagnetModal from './components/LeadMagnetModal';
+import AuthModal from './components/AuthModal';
 import AiMentorWidget from './components/AiMentorWidget';
 import AmbientBackground from './components/AmbientBackground';
 import Footer from './components/Footer';
+import { getCurrentUser, signOutUser } from './services/authService';
+import { supabase, isSupabaseConfigured } from './utils/supabaseClient';
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [isDeploymentGuideOpen, setIsDeploymentGuideOpen] = useState(false);
   const [isLeadMagnetOpen, setIsLeadMagnetOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    // Initial fetch user
+    getCurrentUser().then(user => setCurrentUser(user));
+
+    // Listen for Supabase OAuth changes
+    if (isSupabaseConfigured) {
+      const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
+        setCurrentUser(session?.user || null);
+      });
+      return () => subscription.unsubscribe();
+    }
+  }, []);
+
+  const handleSignOut = async () => {
+    await signOutUser();
+    setCurrentUser(null);
+  };
 
   const handleStartQuiz = () => {
     const el = document.getElementById('scorecard');
@@ -41,6 +64,9 @@ export default function App() {
         onOpenBooking={() => setIsBookingOpen(true)}
         onOpenDeploymentGuide={() => setIsDeploymentGuideOpen(true)}
         onOpenLeadMagnet={() => setIsLeadMagnetOpen(true)}
+        currentUser={currentUser}
+        onOpenAuth={() => setIsAuthModalOpen(true)}
+        onSignOut={handleSignOut}
       />
 
       {/* Main Content Sections */}
@@ -80,6 +106,8 @@ export default function App() {
 
         <CommunityPortal
           onOpenBooking={() => setIsBookingOpen(true)}
+          currentUser={currentUser}
+          onOpenAuth={() => setIsAuthModalOpen(true)}
         />
 
         <Testimonials />
@@ -112,6 +140,13 @@ export default function App() {
       <DeploymentGuideModal
         isOpen={isDeploymentGuideOpen}
         onClose={() => setIsDeploymentGuideOpen(false)}
+      />
+
+      {/* Supabase Authentication Modal (Google / LinkedIn / Email) */}
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+        onAuthSuccess={(user) => setCurrentUser(user)}
       />
 
     </div>

@@ -19,7 +19,7 @@ import {
   subscribeToCommunityUpdates 
 } from '../services/communityApi';
 
-export default function CommunityPortal({ onOpenBooking }) {
+export default function CommunityPortal({ onOpenBooking, currentUser, onOpenAuth }) {
   // Load reflections from backend / local fallback
   const [reflections, setReflections] = useState([]);
   const [isLoadingData, setIsLoadingData] = useState(true);
@@ -57,10 +57,20 @@ export default function CommunityPortal({ onOpenBooking }) {
     takeaway2: '',
     takeaway3: '',
     impactRating: 5,
-    readerName: '',
-    readerRole: '',
+    readerName: currentUser?.user_metadata?.full_name || '',
+    readerRole: currentUser?.user_metadata?.role || 'Verified Member',
     tags: ''
   });
+
+  useEffect(() => {
+    if (currentUser) {
+      setFormData(prev => ({
+        ...prev,
+        readerName: currentUser.user_metadata?.full_name || currentUser.email.split('@')[0],
+        readerRole: currentUser.user_metadata?.role || 'Verified Member'
+      }));
+    }
+  }, [currentUser]);
 
   const [toastMessage, setToastMessage] = useState(null);
 
