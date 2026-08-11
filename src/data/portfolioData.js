@@ -1,17 +1,19 @@
 export const PROFILE = {
   name: "Ram Kishor Jha",
-  title: "Strategic Career & Business Advisor | Founder Advocate | Keynote Speaker",
-  tagline: "Bridging the gap between closing old limits and opening transformational success.",
-  bio: "Ram Kishor Jha is a seasoned enterprise growth strategist, executive mentor, and business advisory leader. With over 15 years of experience across business management, operations, corporate strategy, and talent development, Ram empowers mid-to-senior professionals to break career plateaus and helps early-to-growth stage business founders scale sustainably.",
+  roleTitle: "Lead Chief Mentor & Keynote Speaker",
+  platformName: "CloseToOpen.in",
+  title: "Growth Platform Ecosystem | Guided by Ram Kishor Jha",
+  tagline: "An open community platform for readers, professionals, and founders to close old limits and open transformational growth.",
+  bio: "CloseToOpen.in is an open growth platform designed to empower professionals, business founders, book readers, and enterprise teams. Guided by Ram Kishor Jha—a seasoned enterprise growth strategist and mentor with 15+ years of operational leadership—the platform offers a space for sharing real-life wisdom, assessing growth readiness, and booking high-impact corporate keynotes, online/offline workshops, and 1-on-1 strategic mentorship.",
   linkedInUrl: "https://www.linkedin.com/in/ram-kishor-jha-92948a9b/",
   email: "contact@closetoopen.in",
   whatsapp: "+919876543210",
   location: "India & Global Remote Advisory",
   domain: "closetoopen.in",
   stats: [
-    { label: "Years Experience", value: "15+" },
-    { label: "Professionals Guided", value: "500+" },
-    { label: "Startup Consultations", value: "85+" },
+    { label: "Community Members", value: "1,250+" },
+    { label: "Years Lead Experience", value: "15+" },
+    { label: "Keynotes & Workshops", value: "85+" },
     { label: "Mentee Success Rate", value: "96%" }
   ]
 };

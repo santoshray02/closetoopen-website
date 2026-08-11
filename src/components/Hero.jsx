@@ -20,37 +20,46 @@ export default function Hero({ onOpenBooking, onStartQuiz }) {
             {/* Pill Badge */}
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 border border-blue-500/30 text-blue-300 text-xs font-semibold tracking-wide shadow-inner">
               <Sparkles className="w-3.5 h-3.5 text-blue-400 animate-spin" style={{ animationDuration: '8s' }} />
-              <span>Personal Career & Business Advisory Ecosystem</span>
+              <span>Open Growth Platform & Mentorship Ecosystem</span>
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
             </div>
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1] font-heading">
-              Close The Gap. <br />
-              <span className="gradient-text">Open Your Full Potential.</span>
+              Close The Bottlenecks. <br />
+              <span className="gradient-text">Open Collective Growth.</span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-              Transforming ambition into high-impact execution. Managed by <strong className="text-white font-semibold">Ram Kishor Jha</strong>, <span className="text-blue-400 font-medium">CloseToOpen.in</span> bridges mid-career plateaus and guides business founders toward predictable growth.
+              <span className="text-blue-400 font-semibold">CloseToOpen.in</span> is an open platform for professionals, book readers, and startup founders. Guided by <strong className="text-white font-semibold">Ram Kishor Jha</strong>—available for high-impact 1-on-1 mentorship and online/offline corporate keynotes for companies & institutions.
             </p>
 
             {/* CTA Group */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
               <button
                 onClick={onOpenBooking}
-                className="w-full sm:w-auto flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold text-base shadow-xl shadow-blue-600/30 hover:shadow-blue-600/50 hover:-translate-y-0.5 transition-all duration-200"
+                className="flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold text-sm shadow-xl shadow-blue-600/30 hover:shadow-blue-600/50 hover:-translate-y-0.5 transition-all duration-200"
               >
-                <span>Book 1:1 Advisory Session</span>
-                <ArrowRight className="w-5 h-5" />
+                <Mic className="w-4 h-4 text-purple-300" />
+                <span>Invite RK Jha / Book Session</span>
+                <ArrowRight className="w-4 h-4" />
               </button>
+
+              <a
+                href="#community"
+                className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl glass-card text-blue-300 hover:text-white font-semibold text-sm border border-blue-500/40 hover:border-blue-400 transition-all duration-200"
+              >
+                <Users className="w-4 h-4 text-blue-400" />
+                <span>Explore Book Community</span>
+              </a>
 
               <button
                 onClick={onStartQuiz}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-4 rounded-xl glass-card text-slate-200 hover:text-white font-semibold text-base border border-slate-700/80 transition-all duration-200"
+                className="flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl glass-card text-slate-300 hover:text-white font-semibold text-sm border border-slate-700/80 transition-all duration-200"
               >
-                <Compass className="w-5 h-5 text-purple-400" />
-                <span>Calculate Growth Score</span>
+                <Compass className="w-4 h-4 text-purple-400" />
+                <span>Growth Scorecard</span>
               </button>
             </div>
 

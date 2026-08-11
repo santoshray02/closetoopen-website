@@ -126,16 +126,17 @@ export default function BookingModal({ isOpen, onClose }) {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-300 mb-1">Advisory Focus *</label>
+                <label className="block text-xs font-semibold text-slate-300 mb-1">Engagement Focus *</label>
                 <select
                   value={formData.service}
                   onChange={e => setFormData({ ...formData, service: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 text-sm focus:outline-none focus:border-blue-500"
+                  className="w-full px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-100 text-sm focus:outline-none focus:border-blue-500 font-medium"
                 >
-                  {ADVISORY_SERVICES.map(s => (
-                    <option key={s.id} value={s.title}>{s.title}</option>
-                  ))}
-                  <option value="General Inquiry">General Strategic Consultation</option>
+                  <option value="Corporate Keynote / Institutional Workshop">🎤 Corporate Keynote / Institutional Session (Invite RK Jha Online/Offline)</option>
+                  <option value="1-on-1 Executive Mentorship">👤 1-on-1 Executive & Career Mentorship</option>
+                  <option value="Startup & Business Scaling Advisory">🚀 Startup & Business Scaling Advisory</option>
+                  <option value="Deal & Strategic Growth Readiness">🛡️ Deal & Growth Readiness Audit</option>
+                  <option value="General Community Inquiry">💬 Community & General Inquiry</option>
                 </select>
               </div>
 
