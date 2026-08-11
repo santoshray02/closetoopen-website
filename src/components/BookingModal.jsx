@@ -60,12 +60,17 @@ export default function BookingModal({ isOpen, onClose }) {
     window.open(`https://wa.me/${PROFILE.whatsapp.replace(/[^0-9]/g, '')}?text=${text}`, '_blank');
   };
 
+  const handleModalClose = () => {
+    setSubmitted(false);
+    onClose();
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md overflow-y-auto">
       <div className="bg-[#0F172A] border border-slate-700 rounded-3xl max-w-xl w-full p-6 sm:p-8 space-y-6 relative text-slate-100 shadow-2xl my-8">
         
         <button
-          onClick={onClose}
+          onClick={handleModalClose}
           className="absolute top-6 right-6 p-2 rounded-xl bg-slate-800 text-slate-400 hover:text-white"
         >
           <X className="w-5 h-5" />
