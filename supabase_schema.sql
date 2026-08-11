@@ -1,5 +1,5 @@
 -- ====================================================================
--- CloseToOpen.in — Book Reader Community Portal Supabase SQL Schema
+-- CloseToOpen.in — Book Reader Community & Advisory Supabase SQL Schema
 -- Copy and paste this script into Supabase Dashboard -> SQL Editor -> Run
 -- ====================================================================
 
@@ -41,12 +41,27 @@ CREATE TABLE IF NOT EXISTS public.likes (
   UNIQUE(reflection_id, device_id)
 );
 
--- 4. Enable Row Level Security (RLS)
+-- 4. Create Bookings Table (Stores all Keynotes, Mentorship & Corporate Requests)
+CREATE TABLE IF NOT EXISTS public.bookings (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  full_name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  phone TEXT,
+  engagement_focus TEXT NOT NULL,
+  preferred_date DATE,
+  preferred_time_slot TEXT,
+  notes TEXT,
+  status TEXT DEFAULT 'pending', -- 'pending', 'confirmed', 'completed', 'cancelled'
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- 5. Enable Row Level Security (RLS)
 ALTER TABLE public.reflections ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.comments ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.likes ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.bookings ENABLE ROW LEVEL SECURITY;
 
--- 5. Set RLS Policies (Allow Public Read & Public Insert for Community Engagement)
+-- 6. Set RLS Policies (Allow Public Read & Public Insert for Community Engagement)
 CREATE POLICY "Allow public read on reflections" ON public.reflections FOR SELECT USING (true);
 CREATE POLICY "Allow public insert on reflections" ON public.reflections FOR INSERT WITH CHECK (true);
 CREATE POLICY "Allow public update likes on reflections" ON public.reflections FOR UPDATE USING (true);
@@ -57,7 +72,10 @@ CREATE POLICY "Allow public insert on comments" ON public.comments FOR INSERT WI
 CREATE POLICY "Allow public read on likes" ON public.likes FOR SELECT USING (true);
 CREATE POLICY "Allow public insert on likes" ON public.likes FOR INSERT WITH CHECK (true);
 
--- 6. Trigger to automatically increment likes_count on reflection when a like row is inserted
+CREATE POLICY "Allow public insert on bookings" ON public.bookings FOR INSERT WITH CHECK (true);
+CREATE POLICY "Allow public read on bookings" ON public.bookings FOR SELECT USING (true);
+
+-- 7. Trigger to automatically increment likes_count on reflection when a like row is inserted
 CREATE OR REPLACE FUNCTION update_reflection_likes_count()
 RETURNS TRIGGER AS $$
 BEGIN
@@ -72,12 +90,13 @@ CREATE OR REPLACE TRIGGER trigger_increment_like
 AFTER INSERT ON public.likes
 FOR EACH ROW EXECUTE FUNCTION update_reflection_likes_count();
 
--- 7. Enable Realtime Publications for instant comments and likes updates across all active users
+-- 8. Enable Realtime Publications
 ALTER PUBLICATION supabase_realtime ADD TABLE public.reflections;
 ALTER PUBLICATION supabase_realtime ADD TABLE public.comments;
 ALTER PUBLICATION supabase_realtime ADD TABLE public.likes;
+ALTER PUBLICATION supabase_realtime ADD TABLE public.bookings;
 
--- 8. Seed Initial Data
+-- 9. Seed Initial Data
 INSERT INTO public.reflections (book_title, author, category, quote, real_life_connection, takeaways, impact_rating, reader_name, reader_role, likes_count, tags, featured)
 VALUES
 (

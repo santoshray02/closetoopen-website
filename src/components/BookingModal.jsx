@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { X, Calendar, Clock, CheckCircle2, MessageSquare, Send, Download, Sparkles } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { PROFILE, ADVISORY_SERVICES } from '../data/portfolioData';
+import { createBooking } from '../services/communityApi';
 
 export default function BookingModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    service: 'career-mentorship',
+    service: 'Corporate Keynote / Institutional Workshop',
     preferredDate: '',
     preferredTime: '10:00 AM',
     notes: ''
@@ -17,7 +18,7 @@ export default function BookingModal({ isOpen, onClose }) {
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitted(true);
     try {
@@ -27,6 +28,8 @@ export default function BookingModal({ isOpen, onClose }) {
         origin: { y: 0.5 }
       });
     } catch (err) {}
+
+    await createBooking(formData);
   };
 
   const handleDownloadICS = () => {

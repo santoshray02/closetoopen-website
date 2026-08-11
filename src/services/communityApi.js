@@ -197,6 +197,42 @@ export async function toggleLikeReflection(reflectionId, deviceId) {
 }
 
 /**
+ * Save booking request (Keynote, Mentorship, Advisory) to Supabase
+ */
+export async function createBooking(bookingData) {
+  if (!isSupabaseConfigured) {
+    const savedBookings = JSON.parse(localStorage.getItem('closetoopen_bookings') || '[]');
+    localStorage.setItem('closetoopen_bookings', JSON.stringify([...savedBookings, bookingData]));
+    return bookingData;
+  }
+
+  try {
+    const { data, error } = await supabase
+      .from('bookings')
+      .insert([{
+        full_name: bookingData.name,
+        email: bookingData.email,
+        phone: bookingData.phone,
+        engagement_focus: bookingData.service,
+        preferred_date: bookingData.preferredDate || null,
+        preferred_time_slot: bookingData.preferredTime,
+        notes: bookingData.notes,
+        status: 'pending'
+      }])
+      .select()
+      .single();
+
+    if (error) throw error;
+    return data;
+  } catch (err) {
+    console.error('Failed to save booking to Supabase:', err);
+    const savedBookings = JSON.parse(localStorage.getItem('closetoopen_bookings') || '[]');
+    localStorage.setItem('closetoopen_bookings', JSON.stringify([...savedBookings, bookingData]));
+    return bookingData;
+  }
+}
+
+/**
  * Real-time listener for comments & new reflections
  */
 export function subscribeToCommunityUpdates(onUpdateCallback) {
